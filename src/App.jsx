@@ -116,11 +116,11 @@ function App() {
           className="block"
         >
           <MdWhatsapp
-            className="text-6xl text-black bg-gray-100 rounded-full p-2 shadow-md cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300 ease-in-out"
+            className="text-6xl text-green-500 bg-white rounded-full p-2 shadow-2xl cursor-pointer hover:scale-110 hover:shadow-3xl transition-all duration-300 ease-in-out"
             style={{
               width: "70px",
               height: "70px",
-              boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
             }}
           />
         </a>
