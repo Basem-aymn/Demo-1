@@ -32,10 +32,11 @@ function App() {
           backgroundImage: `url(${pexelsChris})`,
         }}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white text-center px-4">
-            Explore the world with Salimo Limousine
+        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
+          <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            Explore the world with Demo Limousine
           </h1>
+          
         </div>
       </div>
 
@@ -44,7 +45,7 @@ function App() {
         {cities.map((city, index) => (
           <button
             key={index}
-            className="btn bg-black text-white hover:bg-white hover:text-black px-6 py-3"
+            className="btn bg-black text-white hover:bg-white hover:text-black px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
           >
             {city}
           </button>
@@ -60,7 +61,7 @@ function App() {
 
       {/* Second image section (parallax) */}
       <div
-        className="relative min-h-[35rem] sm:h-[100vh] bg-cover bg-center bg-fixed"
+        className="relative min-h-[40rem] sm:min-h-[50vh] bg-cover bg-center bg-fixed"
         style={{
           backgroundImage: "url('/pexels-iriser-1366957.jpg')",
         }}
