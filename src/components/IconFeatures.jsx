@@ -2,7 +2,7 @@ import React from "react";
 
 const IconFeatures = () => {
   return (
-    <div className="grid grid-cols-2 gap-6 sm:flex sm:flex-row sm:justify-center sm:items-center sm:space-x-12 text-white py-6 sm:py-12">
+    <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-12 text-white py-6 sm:py-12">
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
