@@ -87,8 +87,8 @@ function App() {
         }}
       >
         {/* Stats Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 text-white p-8">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 gap-6 md:flex md:justify-around md:flex-wrap text-center drop-shadow-lg">
+        <div className="absolute inset-0 flex items-center justify-center text-white p-8">
+          <div className="grid grid-cols-2 gap-6 md:flex md:justify-around md:flex-wrap text-center drop-shadow-lg">
             <div className="mb-6 md:mb-0">
               <p className="text-4xl font-extrabold">1,200+</p>
               <p className="text-sm mt-1">Private Rides Completed</p>
