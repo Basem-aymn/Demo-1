@@ -2,11 +2,11 @@ import React from "react";
 
 const IconFeatures = () => {
   return (
-    <div className="flex justify-center items-center space-x-12 text-white py-12">
+    <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-12 text-white py-6 sm:py-12">
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
+          className="h-12 w-12 sm:h-16 sm:w-16"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -31,7 +31,7 @@ const IconFeatures = () => {
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
+          className="h-12 w-12 sm:h-16 sm:w-16"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -50,7 +50,7 @@ const IconFeatures = () => {
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
+          className="h-12 w-12 sm:h-16 sm:w-16"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -78,7 +78,7 @@ const IconFeatures = () => {
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
+          className="h-12 w-12 sm:h-16 sm:w-16"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -101,7 +101,7 @@ const IconFeatures = () => {
       <div className="flex flex-col items-center space-y-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-16 w-16"
+          className="h-12 w-12 sm:h-16 sm:w-16"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

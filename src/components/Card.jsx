@@ -40,6 +40,13 @@ const StyledWrapper = styled.div`
     position: relative;
   }
 
+  @media (max-width: 640px) {
+    .card {
+      width: 355px;
+      height: 450px;
+    }
+  }
+
   .img {
     width: 100%;
     height: 100%;

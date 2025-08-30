@@ -27,7 +27,7 @@ function App() {
 
       {/* First image section */}
       <div
-        className="relative h-[500px] bg-cover bg-center"
+        className="relative h-[100vh] sm:h-[100vh] bg-cover bg-center"
         style={{
           backgroundImage: `url(${pexelsChris})`,
         }}
@@ -52,7 +52,7 @@ function App() {
       </div>
 
       {/* Cards section */}
-      <div className="flex flex-wrap justify-center items-center gap-10 p-8">
+      <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-10 p-8">
         {cards.map((_, i) => (
           <Card key={i} />
         ))}
@@ -60,12 +60,12 @@ function App() {
 
       {/* Second image section (parallax) */}
       <div
-        className="relative h-[50vh] bg-cover bg-center bg-fixed"
+        className="relative min-h-[35rem] sm:h-[100vh] bg-cover bg-center bg-fixed"
         style={{
           backgroundImage: "url('/pexels-iriser-1366957.jpg')",
         }}
       >
-        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 py-8 sm:py-0">
           <h1 className="text-4xl font-bold text-white text-center px-4">
             Our Luxury Experience
           </h1>
@@ -80,7 +80,7 @@ function App() {
 
       {/* Standalone image AFTER the slider - Completely separate */}
       <div
-        className="relative h-[40vh] bg-cover bg-fixed"
+        className="relative h-[40vh] sm:h-[25vh] bg-cover bg-fixed"
         style={{
           backgroundImage: "url('/pexels-chaitaastic-2093323.jpg')",
         }}
@@ -117,10 +117,8 @@ function App() {
           className="block"
         >
           <MdWhatsapp
-            className="text-6xl text-green-500 bg-white rounded-full p-2 shadow-2xl cursor-pointer hover:scale-110 hover:shadow-3xl transition-all duration-300 ease-in-out"
+            className="text-4xl sm:text-6xl text-green-500 bg-white rounded-full p-2 shadow-2xl cursor-pointer hover:scale-110 hover:shadow-3xl transition-all duration-300 ease-in-out w-10 h-10 sm:w-[70px] sm:h-[70px]"
             style={{
-              width: "70px",
-              height: "70px",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
             }}
           />
