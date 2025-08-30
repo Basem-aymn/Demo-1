@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+import pexelsSanaan from "../assets/pexels-sanaan-3052361.jpg";
+
 const Card = () => {
   return (
     <StyledWrapper>
       <div className="card">
         <img
           className="img"
-          src="/src/assets/pexels-sanaan-3052361.jpg"
+          src={pexelsSanaan}
           alt="Luxury car"
         />
         <div className="textBox">

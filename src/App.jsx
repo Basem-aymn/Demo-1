@@ -8,6 +8,8 @@ import ReviewsCarousel from "./components/ReviewsCarousel";
 import Footer from "./components/Footer";
 import { MdWhatsapp } from "react-icons/md";
 
+import pexelsChris from "./assets/pexels-chris-schippers-139261-421927.jpg";
+
 function App() {
   const [language, setLanguage] = useState("fr");
 
@@ -27,8 +29,7 @@ function App() {
       <div
         className="relative h-[500px] bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('/src/assets/pexels-chris-schippers-139261-421927.jpg')",
+          backgroundImage: `url(${pexelsChris})`,
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
