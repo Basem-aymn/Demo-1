@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Story+Script&display=swap");
+@import "tailwindcss";
+
+.demo-text {
+  font-family: "Story Script", sans-serif;
+  font-weight: 600;
+}
+
+/* Additional styles for marquee */
+.container {
+  height: 70px;
+ /* Increased height to ensure toggle button is clickable */
+}
+.btn {
+  transition: 0.5s;
+  border: solid black 1px;
+  border-radius: 20px;
+}
+ul {
+  font-family: "Story Script", sans-serif;
+  font-size: 1rem;
+}
+.con {
+  width: 80%;
+}
+.marquee {
+  width: 50%;
+}
+.card {
+  width: 80%;
+}
+
