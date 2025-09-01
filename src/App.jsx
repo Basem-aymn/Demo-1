@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import Card from "./components/Card.jsx";
 import IconFeatures from "./components/IconFeatures";
-import DemoFooter from "./components/DemoFooter";
-import FeaturesSection from "./components/FeaturesSection";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import Footer from "./components/Footer";
+import LazyBackground from "./components/LazyBackground";
 import { MdWhatsapp } from "react-icons/md";
-
 import pexelsChris from "./assets/pexels-chris-schippers-139261-421927.jpg";
 
 function App() {
@@ -26,19 +24,16 @@ function App() {
       <NavBar currentLanguage={language} toggleLanguage={toggleLanguage} />
 
       {/* First image section */}
-      <div
+      <LazyBackground
+        src={pexelsChris}
         className="relative h-[100vh] sm:h-[100vh] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${pexelsChris})`,
-        }}
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Explore the world with Demo Limousine
           </h1>
-          
         </div>
-      </div>
+      </LazyBackground>
 
       {/* Buttons section */}
       <div className="flex justify-center space-x-4 p-8">
@@ -60,11 +55,9 @@ function App() {
       </div>
 
       {/* Second image section (parallax) */}
-      <div
+      <LazyBackground
+        src="/pexels-iriser-1366957.jpg"
         className="relative min-h-[40rem] sm:min-h-[50vh] bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: "url('/pexels-iriser-1366957.jpg')",
-        }}
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 py-8 sm:py-0">
           <h1 className="text-4xl font-bold text-white text-center px-4">
@@ -72,7 +65,7 @@ function App() {
           </h1>
           <IconFeatures />
         </div>
-      </div>
+      </LazyBackground>
 
       {/* Reviews Carousel Section - Separate div under last image */}
       <div className="py-12 bg-gray-50">
@@ -80,11 +73,9 @@ function App() {
       </div>
 
       {/* Standalone image AFTER the slider - Completely separate */}
-      <div
+      <LazyBackground
+        src="/pexels-chaitaastic-2093323.jpg"
         className="relative h-[40vh] sm:h-[25vh] bg-cover bg-fixed"
-        style={{
-          backgroundImage: "url('/pexels-chaitaastic-2093323.jpg')",
-        }}
       >
         {/* Stats Overlay */}
         <div className="absolute inset-0 flex items-center justify-center text-white p-8">
@@ -107,7 +98,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </LazyBackground>
 
       {/* Fixed WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-50">

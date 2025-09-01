@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LazyImage from "./LazyImage";
 
 const reviews = [
   {
@@ -115,7 +116,7 @@ const ReviewsCarousel = () => {
                 <p className="text-gray-700 mb-4 text-sm">{review.text}</p>
                 <div className="mb-4">{renderStars(review.rating)}</div>
                 <div className="flex items-center space-x-4">
-                  <img
+                  <LazyImage
                     src={review.avatar}
                     alt={review.name}
                     className="w-10 h-10 rounded-full object-cover"

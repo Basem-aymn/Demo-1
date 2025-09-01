@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LazyImage from "./LazyImage";
 
 import pexelsSanaan from "../assets/pexels-sanaan-3052361.jpg";
 
@@ -7,7 +8,7 @@ const Card = () => {
   return (
     <StyledWrapper>
       <div className="card">
-        <img
+        <LazyImage
           className="img"
           src={pexelsSanaan}
           alt="Luxury car"
