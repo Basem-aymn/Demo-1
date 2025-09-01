@@ -5,6 +5,7 @@ import IconFeatures from "./components/IconFeatures";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import Footer from "./components/Footer";
 import LazyBackground from "./components/LazyBackground";
+import translations from "./translations";
 import { MdWhatsapp } from "react-icons/md";
 import pexelsChris from "./assets/pexels-chris-schippers-139261-421927.jpg";
 
@@ -15,7 +16,12 @@ function App() {
     setLanguage((prevLang) => (prevLang === "fr" ? "en" : "fr"));
   };
 
-  const cities = ["All", "MONTREAL", "WINDSOR", "COMING SOON"];
+  const cities = [
+    translations[language].all,
+    translations[language].montreal,
+    translations[language].windsor,
+    translations[language].comingSoon,
+  ];
   const cards = Array(9).fill(null);
 
   return (
@@ -30,7 +36,7 @@ function App() {
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Explore the world with Demo Limousine
+            {translations[language].explore}
           </h1>
         </div>
       </LazyBackground>
@@ -61,7 +67,7 @@ function App() {
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 py-8 sm:py-0">
           <h1 className="text-4xl font-bold text-white text-center px-4">
-            Our Luxury Experience
+            {translations[language].luxuryExperience}
           </h1>
           <IconFeatures />
         </div>

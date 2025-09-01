@@ -9,8 +9,8 @@ const NavBar = ({ currentLanguage, toggleLanguage }) => {
   };
 
   return (
-    <div className="w-full fixed top-0 left-0 bg-black/70 z-50">
-      <nav className="w-full md:max-w-7xl mx-auto flex items-center justify-between p-4 relative">
+    <div className="w-full fixed top-0 left-0 bg-black/70 z-50 ">
+      <nav className="w-full md:max-w-7xl mx-auto flex items-center justify-between p-4 relative animate__animated animate__backInDown ">
         {/* Logo - left */}
         <SplitText
           text="demo"
