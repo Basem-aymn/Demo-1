@@ -46,7 +46,11 @@ function App() {
         {cities.map((city, index) => (
           <button
             key={index}
-            className="btn bg-black text-white hover:bg-white hover:text-black px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+            className={`btn bg-black text-white hover:bg-white hover:text-black ${
+              language === 'fr'
+                ? 'px-3 py-2 text-sm sm:px-6 sm:py-3 sm:text-base'
+                : 'px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base'
+            }`}
           >
             {city}
           </button>
