@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import LazyBackground from "./components/LazyBackground";
 import translations from "./translations";
 import { MdWhatsapp } from "react-icons/md";
-import pexelsChris from "./assets/pexels-chris-schippers-139261-421927.jpg";
 
 function App() {
   const [language, setLanguage] = useState("fr");
@@ -29,10 +28,11 @@ function App() {
       {/* NavBar */}
       <NavBar currentLanguage={language} toggleLanguage={toggleLanguage} />
 
-      {/* First image section */}
+      {/* First video section */}
       <LazyBackground
-        src={pexelsChris}
+        src="/5967730-uhd_3840_2160_30fps.mp4"
         className="relative h-[100vh] sm:h-[100vh] bg-cover bg-center"
+        isVideo={true}
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -57,11 +57,37 @@ function App() {
         ))}
       </div>
 
-      {/* Cards section */}
-      <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-10 p-8">
-        {cards.map((_, i) => (
-          <Card key={i} />
-        ))}
+      {/* City to City Trips Section */}
+      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(104, 114, 122, 0.1)', borderColor: 'rgba(54, 83, 94, 0.3)'}}>
+        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>City to City Trips</h2>
+        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Premium transportation services between cities with luxury vehicles and professional drivers</p>
+        <div className="flex justify-center items-center gap-10 flex-wrap">
+          {cards.slice(0, 3).map((_, i) => (
+            <Card key={i} />
+          ))}
+        </div>
+      </div>
+
+      {/* Airport Trips Section */}
+      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(54, 83, 94, 0.1)', borderColor: 'rgba(104, 114, 122, 0.3)'}}>
+        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>Airport Trips</h2>
+        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Reliable airport transfers with punctual service and comfortable luxury transportation</p>
+        <div className="flex justify-center items-center gap-10 flex-wrap">
+          {cards.slice(3, 6).map((_, i) => (
+            <Card key={i + 3} sectionType="airport" />
+          ))}
+        </div>
+      </div>
+
+      {/* Attractions Section */}
+      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(104, 114, 122, 0.15)', borderColor: 'rgba(54, 83, 94, 0.4)'}}>
+        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>Attractions</h2>
+        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Explore local attractions with guided tours and premium transportation services</p>
+        <div className="flex justify-center items-center gap-10 flex-wrap">
+          {cards.slice(6, 9).map((_, i) => (
+            <Card key={i + 6} sectionType="attractions" />
+          ))}
+        </div>
       </div>
 
       {/* Second image section (parallax) */}

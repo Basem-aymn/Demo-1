@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const LazyBackground = ({ src, className, children, ...props }) => {
+const LazyBackground = ({ src, className, children, isVideo, ...props }) => {
   const [isInView, setIsInView] = useState(false);
   const divRef = useRef(null);
 
@@ -21,6 +21,26 @@ const LazyBackground = ({ src, className, children, ...props }) => {
 
     return () => observer.disconnect();
   }, []);
+
+  if (isVideo && isInView) {
+    return (
+      <div
+        ref={divRef}
+        className={className}
+        {...props}
+      >
+        <video
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {children}
+      </div>
+    );
+  }
 
   const style = isInView ? { backgroundImage: `url(${src})` } : {};
 

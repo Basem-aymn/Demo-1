@@ -3,14 +3,26 @@ import styled from "styled-components";
 import LazyImage from "./LazyImage";
 
 import pexelsSanaan from "../assets/pexels-sanaan-3052361.jpg";
+import pexelsGalerieb from "../../pexels-galerieb-2244823.jpg";
+import pexelsSehjad from "../../pexels-sehjad-khoja-2153361540-33734760.jpg";
 
-const Card = () => {
+const Card = ({ imageSrc, sectionType }) => {
+  const getImageSrc = () => {
+    if (sectionType === 'attractions') {
+      return pexelsGalerieb;
+    }
+    if (sectionType === 'airport') {
+      return pexelsSehjad;
+    }
+    return imageSrc || pexelsSanaan;
+  };
+
   return (
     <StyledWrapper>
       <div className="card">
         <LazyImage
           className="img"
-          src={pexelsSanaan}
+          src={getImageSrc()}
           alt="Luxury car"
         />
         <div className="textBox">
@@ -27,7 +39,7 @@ const StyledWrapper = styled.div`
   .card {
     width: 355px;
     height: 450px;
-    background: #1a1a1a;
+    background: transparent;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -36,7 +48,6 @@ const StyledWrapper = styled.div`
     color: white;
     transition: 0.2s ease-in-out;
     border: 1px solid #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     position: relative;
   }
