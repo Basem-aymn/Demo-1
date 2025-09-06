@@ -5,6 +5,7 @@ import IconFeatures from "./components/IconFeatures";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import Footer from "./components/Footer";
 import LazyBackground from "./components/LazyBackground";
+import Beams from "./components/Beams";
 import translations from "./translations";
 import { MdWhatsapp } from "react-icons/md";
 
@@ -28,18 +29,24 @@ function App() {
       {/* NavBar */}
       <NavBar currentLanguage={language} toggleLanguage={toggleLanguage} />
 
-      {/* First video section */}
-      <LazyBackground
-        src="/5967730-uhd_3840_2160_30fps.mp4"
-        className="relative h-[100vh] sm:h-[100vh] bg-cover bg-center"
-        isVideo={true}
-      >
+      {/* First beams section */}
+      <div className="relative h-[100vh] sm:h-[100vh]">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
         <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6">
           <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             {translations[language].explore}
           </h1>
         </div>
-      </LazyBackground>
+      </div>
 
       {/* Buttons section */}
       <div className="flex justify-center space-x-4 p-8">
