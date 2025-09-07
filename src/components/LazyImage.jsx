@@ -30,7 +30,7 @@ const LazyImage = ({ src, alt, className, ...props }) => {
   return (
     <img
       ref={imgRef}
-      src={isInView ? src : ''}
+      src={isInView ? src : null}
       alt={alt}
       className={`${className} ${isLoaded ? 'loaded' : 'loading'}`}
       onLoad={handleLoad}

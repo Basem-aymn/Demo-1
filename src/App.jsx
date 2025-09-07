@@ -6,6 +6,8 @@ import ReviewsCarousel from "./components/ReviewsCarousel";
 import Footer from "./components/Footer";
 import LazyBackground from "./components/LazyBackground";
 import Beams from "./components/Beams";
+import RollingGallery from "./components/RollingGallery";
+import FlowingMenu from "./components/FlowingMenu";
 import translations from "./translations";
 import { MdWhatsapp } from "react-icons/md";
 
@@ -23,6 +25,13 @@ function App() {
     translations[language].comingSoon,
   ];
   const cards = Array(9).fill(null);
+
+  const demoItems = [
+    { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -45,6 +54,9 @@ function App() {
           <h1 className="text-4xl font-bold text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             {translations[language].explore}
           </h1>
+          <p className="text-lg font-medium text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            Premium • Luxury • Professional • Reliable
+          </p>
         </div>
       </div>
 
@@ -54,9 +66,9 @@ function App() {
           <button
             key={index}
             className={`btn bg-black text-white hover:bg-white hover:text-black ${
-              language === 'fr'
-                ? 'px-3 py-2 text-sm sm:px-6 sm:py-3 sm:text-base'
-                : 'px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base'
+              language === "fr"
+                ? "px-3 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
+                : "px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
             }`}
           >
             {city}
@@ -65,9 +77,23 @@ function App() {
       </div>
 
       {/* City to City Trips Section */}
-      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(104, 114, 122, 0.1)', borderColor: 'rgba(54, 83, 94, 0.3)'}}>
-        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>City to City Trips</h2>
-        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Premium transportation services between cities with luxury vehicles and professional drivers</p>
+      <div
+        className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8"
+        style={{
+          backgroundColor: "rgba(104, 114, 122, 0.1)",
+          borderColor: "rgba(54, 83, 94, 0.3)",
+        }}
+      >
+        <h2
+          className="text-3xl font-bold text-center mb-4"
+          style={{ color: "#36535E" }}
+        >
+          City to City Trips
+        </h2>
+        <p className="text-center mb-8 text-lg" style={{ color: "#68727A" }}>
+          Premium transportation services between cities with luxury vehicles
+          and professional drivers
+        </p>
         <div className="flex justify-center items-center gap-10 flex-wrap">
           {cards.slice(0, 3).map((_, i) => (
             <Card key={i} />
@@ -76,9 +102,23 @@ function App() {
       </div>
 
       {/* Airport Trips Section */}
-      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(54, 83, 94, 0.1)', borderColor: 'rgba(104, 114, 122, 0.3)'}}>
-        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>Airport Trips</h2>
-        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Reliable airport transfers with punctual service and comfortable luxury transportation</p>
+      <div
+        className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8"
+        style={{
+          backgroundColor: "rgba(54, 83, 94, 0.1)",
+          borderColor: "rgba(104, 114, 122, 0.3)",
+        }}
+      >
+        <h2
+          className="text-3xl font-bold text-center mb-4"
+          style={{ color: "#36535E" }}
+        >
+          Airport Trips
+        </h2>
+        <p className="text-center mb-8 text-lg" style={{ color: "#68727A" }}>
+          Reliable airport transfers with punctual service and comfortable
+          luxury transportation
+        </p>
         <div className="flex justify-center items-center gap-10 flex-wrap">
           {cards.slice(3, 6).map((_, i) => (
             <Card key={i + 3} sectionType="airport" />
@@ -86,16 +126,17 @@ function App() {
         </div>
       </div>
 
-      {/* Attractions Section */}
-      <div className="p-8 backdrop-blur-sm rounded-2xl border mx-4 my-8" style={{backgroundColor: 'rgba(104, 114, 122, 0.15)', borderColor: 'rgba(54, 83, 94, 0.4)'}}>
-        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#36535E'}}>Attractions</h2>
-        <p className="text-center mb-8 text-lg" style={{color: '#68727A'}}>Explore local attractions with guided tours and premium transportation services</p>
-        <div className="flex justify-center items-center gap-10 flex-wrap">
-          {cards.slice(6, 9).map((_, i) => (
-            <Card key={i + 6} sectionType="attractions" />
-          ))}
-        </div>
+      {/* Rolling Gallery Section */}
+      <div className="p-8 mx-4 my-8">
+        <RollingGallery autoplay={true} pauseOnHover={true} />
       </div>
+
+      {/* Flowing Menu Section */}
+      <div style={{ height: '600px', position: 'relative' }}>
+        <FlowingMenu items={demoItems} />
+      </div>
+
+     
 
       {/* Second image section (parallax) */}
       <LazyBackground

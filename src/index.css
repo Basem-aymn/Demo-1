@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Story+Script&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Story+Script&display=swap"); */
 @import "tailwindcss";
 
 .demo-text {
@@ -28,5 +28,26 @@ ul {
 }
 .card {
   width: 80%;
+}
+
+.focus-visible\:text-\[\#060010\] {
+    background-color: black;
+}
+
+.flowing-menu-link:focus-visible {
+  text-decoration: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
 }
 
